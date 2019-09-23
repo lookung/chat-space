@@ -1,4 +1,4 @@
-require_relative 'boot'2
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -14,5 +14,6 @@ module ChatSpace
       g.helper false
       g.test_framework false
     end
+    config.i18n.default_locale = :ja
   end
-end end
+end 
