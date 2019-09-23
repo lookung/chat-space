@@ -25,24 +25,21 @@ document.addEventListener('turbolinks:load', function() {
     return false;
   });
   function messageBuildHTML(message) {
-    var html = `
-    <div class='message'>
-<div class='upper-message'>
-<div class='upper-message__user-name'>
-${message.name}
-</div>
-<div class='upper-message__date'>
-${message.time}
-</div>
-</div>
-<div class='lower-message'>
-<p class='lower-message__content'>
-${message.content}
-</p>
-
-</div>
-</div>
-    `
+    var html = `<div class='message'>
+                  <div class='upper-message'>
+                    <div class='upper-message__user-name'>
+                      ${message.name}
+                    </div>
+                    <div class='upper-message__date'>
+                      ${message.time}
+                    </div>
+                  </div>
+                  <div class='lower-message'>
+                    <p class='lower-message__content'>
+                      ${message.content}
+                    </p>
+                  </div>
+                </div>`
     return html
   }
 });
