@@ -37,6 +37,8 @@ document.addEventListener('turbolinks:load', function() {
                   <div class='lower-message'>
                     <p class='lower-message__content'>
                       ${message.content}
+                      ${message.image.url}
+
                     </p>
                   </div>
                 </div>`
