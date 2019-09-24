@@ -26,11 +26,11 @@ document.addEventListener('turbolinks:load', function() {
 
 function messageBuildHTML(message) {
   if(message.image !== null) {
-    var image = `<p class="ower-message__content">
+    var basehtml = `<p class="ower-message__content">
                     <img src=${message.image} >
                 </p>`;
   }else {
-    var image = ``;
+    var basehtml = ``;
   }
   var basehtml = `<div class='upper-message'>
                     <div class='upper-message__user-name'>
