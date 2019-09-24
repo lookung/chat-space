@@ -14,7 +14,6 @@ document.addEventListener('turbolinks:load', function() {
       dataType: 'json'
     })
     .done(function(data) {
-      // ScrollDown()
       var html = messageBuildHTML(data);
       $('.messages').append(html);
       $('#new_message')[0].reset();
@@ -24,9 +23,16 @@ document.addEventListener('turbolinks:load', function() {
     });
     return false;
   });
-  function messageBuildHTML(message) {
-    var html = `<div class='message'>
-                  <div class='upper-message'>
+
+function messageBuildHTML(message) {
+  if(message.image !== null) {
+    var image = `<p class="ower-message__content">
+                    <img src=${message.image} >
+                </p>`;
+  }else {
+    var image = ``;
+  }
+  var basehtml = `<div class='upper-message'>
                     <div class='upper-message__user-name'>
                       ${message.name}
                     </div>
@@ -39,10 +45,9 @@ document.addEventListener('turbolinks:load', function() {
                       ${message.content}
                       ${message.image}
                     </p>
-                      
-                  </div>
-                </div>`
-    return html
-  }
+                    
+                  </div>`
+  return basehtml;
+}
 });
 ;
