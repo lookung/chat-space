@@ -37,12 +37,12 @@ document.addEventListener('turbolinks:load', function() {
                   <div class='lower-message'>
                     <p class='lower-message__content'>
                       ${message.content}
-                      ${message.image.url}
-
+                      ${message.image}
                     </p>
+                      
                   </div>
                 </div>`
     return html
   }
 });
-
+;
