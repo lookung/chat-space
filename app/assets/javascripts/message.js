@@ -25,7 +25,7 @@ document.addEventListener('turbolinks:load', function() {
   });
 
 function messageBuildHTML(message) {
-  var image = message.image ? "${ message.image }" : "";
+  var image = message.image ? `<img src=${message.image} >` : "";
 
   var basehtml = `<div class='upper-message'>
                     <div class='upper-message__user-name'>
@@ -38,7 +38,7 @@ function messageBuildHTML(message) {
                   <div class='lower-message'>
                     <p class='lower-message__content'>
                       ${message.content}
-                      ${message.image}
+                      ${image}
                     </p>
                     
                   </div>`
